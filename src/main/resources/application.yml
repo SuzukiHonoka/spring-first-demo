@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: demo
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+  error:
+    include-message: always
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
